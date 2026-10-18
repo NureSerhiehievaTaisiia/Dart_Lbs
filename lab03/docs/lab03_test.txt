@@ -1,0 +1,9 @@
+00:00 +0: loading test\async_repository_test.dart
+00:00 +0: test\async_repository_test.dart: AsyncRepository load returns null for an unknown id
+00:00 +1: test\async_repository_test.dart: AsyncRepository save then load returns the same film
+00:00 +2: test\async_repository_test.dart: AsyncRepository delete removes a stored film
+00:00 +3: test\async_repository_test.dart: AsyncRepository delete of a missing id returns false
+00:00 +4: test\async_repository_test.dart: AsyncRepository save rejects an empty id
+00:00 +5: test\async_repository_test.dart: AsyncRepository watchAll emits codes in insertion order
+00:00 +6: test\async_repository_test.dart: AsyncRepository watchAll does not start before a subscription
+00:00 +7: All tests passed!
