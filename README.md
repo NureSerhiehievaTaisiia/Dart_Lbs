@@ -9,4 +9,4 @@
 | `lab03/` | Future / Stream / Isolate + тести |
 | `lab04/` | Файли, HTTP-клієнт, shelf-сервіс |
 
-У кожній папці: код, `README.md`, `docs/` зі звітом Word і виводом `dart analyze`.
+У кожній папці: код, `README.md` і виводом `dart analyze`.
