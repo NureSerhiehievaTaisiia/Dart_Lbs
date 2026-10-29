@@ -1,9 +1,0 @@
-name: lab02
-description: Каталог фільмів. Лабораторна робота 2 — об'єктна модель.
-version: 1.0.0
-
-environment:
-  sdk: ^3.13.4
-
-dev_dependencies:
-  lints: ^6.0.0
