@@ -1,0 +1,6 @@
+# https://dart.dev/tools/private-files
+.dart_tool/
+build/
+*.exe
+.env
+secrets.json
