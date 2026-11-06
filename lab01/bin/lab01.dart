@@ -71,7 +71,9 @@ void main() {
     ..writeln('Сумарна тривалість: ${totalDuration(valid)} хв')
     ..writeln('Назви: ${titles.join(', ')}')
     ..writeln('Акцент: $accent')
-    ..writeln('Пошук FM-010: ${findByCode(valid, 'FM-010')?.title}')
+    ..writeln(
+      'Пошук FM-010: ${findByCode(valid, 'FM-010')?.title ?? 'не знайдено'}',
+    )
     ..writeln(
       'Пошук FM-999: ${findByCode(valid, 'FM-999')?.title ?? 'не знайдено'}',
     );
