@@ -1,6 +1,6 @@
 name: lab01
 description: Каталог фільмів. Лабораторна робота 1 — функції та колекції.
-version: 1.0.0
+version: 1.0.1
 
 environment:
   sdk: ^3.13.4
