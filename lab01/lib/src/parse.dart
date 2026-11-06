@@ -71,12 +71,10 @@ ParseResult parseLine(String line) {
 /// Маскує числову частину коду каталогу через replaceAllMapped.
 String maskCatalogCode(String code) {
   return code.replaceAllMapped(catalogCodePattern, (match) {
-    if (match is! RegExpMatch) {
-      return code;
-    }
-    final prefix = match.namedGroup('prefix');
+    final captured = match as RegExpMatch;
+    final prefix = captured.namedGroup('prefix');
     if (prefix == null) {
-      return code;
+      return captured[0] ?? '';
     }
     return '$prefix-$maskedCodeNumber';
   });
