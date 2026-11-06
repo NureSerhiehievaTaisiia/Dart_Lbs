@@ -33,6 +33,9 @@ void main() {
 
   final titles = valid.map(filmTitle).toList();
   final highlighted = pickHighlighted(valid);
+  final accent = highlighted == null
+      ? 'немає записів'
+      : '${highlighted.title} (${highlighted.code})';
   final byYear = sortFilms(valid, criterion: sortByYear, ascending: true);
   final byRating = sortFilms(valid, criterion: sortByRating, ascending: false);
   final genreAverages = averageRatingByGenre(valid);
@@ -67,7 +70,7 @@ void main() {
     ..writeln('Середня оцінка: ${averageRating(valid).toStringAsFixed(2)}')
     ..writeln('Сумарна тривалість: ${totalDuration(valid)} хв')
     ..writeln('Назви: ${titles.join(', ')}')
-    ..writeln('Акцент: ${highlighted.title} (${highlighted.code})')
+    ..writeln('Акцент: $accent')
     ..writeln('Пошук FM-010: ${findByCode(valid, 'FM-010')?.title}')
     ..writeln(
       'Пошук FM-999: ${findByCode(valid, 'FM-999')?.title ?? 'не знайдено'}',

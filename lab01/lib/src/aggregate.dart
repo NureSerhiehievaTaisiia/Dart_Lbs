@@ -64,7 +64,12 @@ FilmRecord? findByCode(List<FilmRecord> films, String code) {
 }
 
 /// Бере перший фільм із високою оцінкою або перший запис списку.
-FilmRecord pickHighlighted(List<FilmRecord> films) {
+///
+/// Порожній список дає null: запасного запису в ньому немає.
+FilmRecord? pickHighlighted(List<FilmRecord> films) {
+  if (films.isEmpty) {
+    return null;
+  }
   return films.firstWhere(
     ratingAtLeast(highRatingThreshold),
     orElse: () => films.first,
