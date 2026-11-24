@@ -117,7 +117,9 @@ Future<void> _serve(FilmRepository repository) async {
   final server = await shelf_io.serve(
     handler,
     InternetAddress.loopbackIPv4,
-    8080,
+    8787,
   );
-  stdout.writeln('HTTP-сервіс: http://${server.address.host}:${server.port}');
+  final base = 'http://${server.address.host}:${server.port}';
+  stdout.writeln('HTTP-сервіс: $base');
+  stdout.writeln('Демо-сайт:   $base/');
 }
