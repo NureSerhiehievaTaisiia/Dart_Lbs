@@ -6,10 +6,16 @@ import 'package:shelf_router/shelf_router.dart';
 import '../film.dart';
 import '../genre.dart';
 import '../memory_repository.dart';
+import 'demo_page.dart';
 
 /// JSON UTF-8 заголовок відповідей.
 const jsonHeaders = <String, String>{
   'content-type': 'application/json; charset=utf-8',
+};
+
+/// HTML UTF-8 для демо-сторінки.
+const htmlHeaders = <String, String>{
+  'content-type': 'text/html; charset=utf-8',
 };
 
 /// Журналює метод, шлях і код відповіді у [log].
@@ -29,6 +35,10 @@ Middleware requestLogMiddleware({void Function(String line)? log}) {
 /// Збирає Router для [repository].
 Router buildRouter(FilmRepository repository) {
   final router = Router();
+
+  router.get('/', (Request request) async {
+    return Response.ok(demoPageHtml(), headers: htmlHeaders);
+  });
 
   router.get('/items', (Request request) async {
     final genre = request.url.queryParameters['genre'];
